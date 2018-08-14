@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<p>Response:</p>
+<p>{{response | json }}</p>
+<form class='create' (submit)='createCake()'>
+  <h2>Create a new Cake!</h2>
+  <p>{{newCake | json}}</p>
+  <p>Baker Name:</p>
+  <input type='text' name='baker' [(ngModel)]='newCake.baker' placeholder='baker'>
+  <p>Image Path:</p>
+  <input type='text' name='imagePath' [(ngModel)]='newCake.imagePath' placeholder='image path'><br>
+  <input type='submit' class='turnin' value='SUBMIT'>
+</form>
+<h1>All Cakes</h1>
+<div class='allCakes'>
+  <div *ngFor='let cake of cakes' class='cake'>
+      <img src='{{cake.imagePath}}' alt='Cake Image' (click)='cakeClicked(cake._id)'>
+      <form (submit)='createRating(cake._id)'>
+          <p>Rating: <select name='rating' [(ngModel)]=cakeRating>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+          </select></p>
+          <p>Comment:</p>
+          <textarea name='comment' [(ngModel)]='cakeComment'></textarea><br>
+          <input type='submit' value='Submit'>
+        </form>
+  </div>
+
+  <!-- <img *ngFor='let cake of cakes' src='{{cake.imagePath}}' alt='Cake Image' (click)='cakeClicked(cake._id)'> -->
+</div>
+<app-cake-review *ngIf='selected' [cake]='showCake' [ratings]='ratings' [average]='avgRating'></app-cake-review>

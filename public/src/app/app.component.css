@@ -1,0 +1,47 @@
+div.allCakes{
+    max-width:1200px;
+    height:500px;
+    overflow:scroll;
+    border:1px solid black;
+    margin:auto;
+    text-align: center;
+}
+div.allCakes img{
+    width:250px;
+    height:250px;
+    border:8px solid salmon;
+    margin:10px;
+    vertical-align: top;
+}
+h1{
+    text-align: center;
+}
+form.create{
+    border:1px solid black;
+    width:400px;
+    margin:auto;
+}
+form.create h2{
+    text-align: center;
+}
+form.create input{
+    width:300px;
+    font-size:14pt;
+    display:block;
+    margin:auto;
+}
+form.create input.turnin{
+    width:150px;
+}
+div.cake{
+    display:inline-block;
+    width:290px;
+}
+div.cake form textarea{
+    resize: none;
+    width:230px;
+    height:40px;
+}
+div.cake form p{
+    margin:5px;
+}

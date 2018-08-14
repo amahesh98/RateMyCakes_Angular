@@ -1,0 +1,13 @@
+<div class='reviewBox'>
+  <div class='left'>
+      <h1>Baked by {{cake.baker}}</h1>
+      <img src={{cake.imagePath}} alt='cake image'>
+  </div>
+  <div class='right'>
+    <h2>Reviews</h2>
+    <h3>Average Rating: {{average}} &#9733;</h3>
+    <div class='rating' *ngFor='let rating of ratings'>
+      <p>{{rating.rating}} &#9733; - {{rating.comment}}</p>
+    </div>
+  </div>
+</div>
